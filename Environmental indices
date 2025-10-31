@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    char city[50];
+    int aqi;
+    int water;
+    float green;
+    int transport;
+    float score;
+    char grade;
+    printf("Enter city name: ");
+    scanf("%s", city);
+    printf("Enter Air Quality: ");
+    scanf("%d", &aqi);
+    printf("Enter Water Quality: ");
+    scanf("%d", &water);
+    printf("Enter Green Cover: ");
+    scanf("%f", &green);
+    printf("Enter Transport Score: ");
+    scanf("%d", &transport);
+    score = aqi + water + green + transport;
+    score = score / 4;
+    if(score >= 80) {
+        grade = 'A';
+    }
+    else if(score >= 60) {
+        grade = 'B';
+    }
+    else if(score >= 40) {
+        grade = 'C';
+    }
+    else {
+        grade = 'F';
+    }
+    printf("City: %s\n", city);
+    printf("Score: %.2f\n", score);
+    printf("Grade: %c\n", grade);
+    return 0;
+}
